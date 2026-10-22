@@ -9,6 +9,7 @@ secrets/
 credentials/
 
 # Python
+__init__.py
 __pycache__/
 *.py[cod]
 *.pyd
