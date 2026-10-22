@@ -1,0 +1,17 @@
+langchain
+langchain-openai
+uv
+langchain-core
+python-dotenv
+langchain-community
+langchain-chroma
+pypdf
+langchain-huggingface
+sentence-transformers
+langchain-pdf
+uvicorn
+streamlit
+mlflow
+loguru
+faiss-cpu
+psutil

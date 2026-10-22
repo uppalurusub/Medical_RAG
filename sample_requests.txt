@@ -1,0 +1,71 @@
+
+1. Basic RAG query
+Use this first to verify retrieval and answer generation.
+{
+  "question": "What is gout, and what are its common symptoms?",
+  "top_k": 1,
+  "filters": {},
+  "include_context": true,
+  "request_id": "rag-test-001"
+}
+
+
+2. Medical knowledge questions
+These examples are suitable for your Encyclopedia_Medicine.pdf knowledge source, provided it has been ingested into Chroma.
+Example 1 — Gout and uric acid
+{
+  "question": "What causes gout, and how is it related to uric acid?",
+  "top_k": 4,
+  "filters": {},
+  "include_context": true,
+  "request_id": "rag-gout-001"
+}
+
+
+Tests retrieval of relevant medical information from multiple chunks.
+  Copy request 
+Example 2 — Diabetes
+{
+  "question": "What is diabetes mellitus, and what are its common symptoms?",
+  "top_k": 4,
+  "filters": {},
+  "include_context": true,
+  "request_id": "rag-diabetes-001"
+}
+
+
+  Copy request 
+Example 3 — Hypertension
+{
+  "question": "What is hypertension, and what complications can it cause?",
+  "top_k": 4,
+  "filters": {},
+  "include_context": true,
+  "request_id": "rag-hypertension-001"
+}
+
+
+  Copy request 
+Example 4 — Treatment information
+{
+  "question": "What treatment approaches are described for asthma?",
+  "top_k": 3,
+  "filters": {},
+  "include_context": true,
+  "request_id": "rag-asthma-001"
+}
+
+
+  Copy request 
+
+3. Testing metadata filters
+Use filters only when the metadata keys exist in your stored Chroma documents and your implementation supports those filter operators. The example below is illustrative; confirm the actual metadata schema before using it.
+{
+  "question": "What does the document say about gout?",
+  "top_k": 3,
+  "filters": {
+    "source": "Encyclopedia_Medicine.pdf"
+  },
+  "include_context": true,
+  "request_id": "rag-filter-001"
+}
