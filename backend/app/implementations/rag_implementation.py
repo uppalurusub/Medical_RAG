@@ -6,8 +6,8 @@ from typing import Any
 from sentence_transformers import CrossEncoder
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from app.config.config import settings
-from app.config.llm_config import get_llm
+from app.config.settings import settings
+
 from app.implementations.vector_store import similarity_search_with_relevance_scores
 from app.observability.usage import extract_usage
 from app.observability.mlflow_logger import log_metrics
@@ -34,7 +34,7 @@ class RAGImplementation:
     @property
     def llm(self):
         if self._llm is None:
-            self._llm = get_llm()
+            self._llm = settings.get_model_client()
         return self._llm
 
     def retrieve(
